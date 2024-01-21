@@ -1,0 +1,23 @@
+<div class="dialog">
+    <div class="header">
+        <h3>Task detail</h3>
+        <button class="btn btn-close"
+    (click) ="todoService.todoUpdateShowModal=false"></button>
+    </div>
+    <hr>
+    <div>
+        <form #todoForm="ngForm" (ngSubmit)="updateTodo()">
+            <label for="title">Title</label>
+            <input type="text" name="title"[(ngModel)]="todo.title"
+            value="{{todo.title}}"  /> <br>
+            <label for="date">date</label>
+            <input type="date" name="date"[(ngModel)]="todo.date"
+            value="{{todo.date}}"  /> <br>
+            <label for="desc">description</label>
+            <textarea name="description" [(ngModel)]="todo.description"
+            value="{{todo.description}}" id="desc"></textarea>
+            <button type="submit" class="btn btn-dark"
+            [ngStyle]="{'width':'300px'}"></button>
+        </form>
+    </div>
+</div>
